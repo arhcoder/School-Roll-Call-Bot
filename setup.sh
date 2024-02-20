@@ -17,6 +17,6 @@ sudo apt-get install -y python
 sudo apt-get install -y python-pip
 
 # 4. Gets the dependencies for Python:
-pip install discord python-dotenv selenium
+pip install discord python-dotenv selenium webdriver_manager
 
 echo "Completed Installation :3"

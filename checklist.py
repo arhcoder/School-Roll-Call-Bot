@@ -6,10 +6,23 @@ import time
 from encrypt import decode
 from dotenv import load_dotenv
 
+# For Linux Server Headless running:
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 def checklist(username, crypt_password, course_id=18):
     # Opens Selenium Chrome Webdriver:
     try:
+        # If OS has Screen:
         browser = webdriver.Chrome()
+
+        # For Headless:
+        # chrome_options = Options()
+        # chrome_options.add_argument("--headless")
+        # chrome_options.add_argument("--no-sandox")
+        # chrome_options.add_argument("--disable-dev-shm-usage")
+        # browser = webdriver.Chrome(service=Service(ChromeDriverManager.install()), options=chrome_options)
     except:
         raise ValueError("Cannot open Selenium Chrome Web Driver :c")
     
@@ -62,5 +75,3 @@ def checklist(username, crypt_password, course_id=18):
     # Close the browser:
     browser.quit()
     return True
-
-checklist("al243681", "+\u0007\u0005\u0012*\u001a\u001a\u000b\fYG")
